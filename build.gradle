@@ -1,0 +1,90 @@
+
+buildscript {
+    repositories {
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+    dependencies {
+        classpath "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:2.5"
+    }
+}
+apply plugin: "org.sonarqube"
+apply plugin: 'java'
+apply plugin: 'idea'
+group 'lhind.lsg.workorder'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+dependencies {
+    compile group: 'junit', name: 'junit', version: '4.12'
+    compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.13.0'
+    compile group: 'info.cukes', name: 'cucumber-core', version: '1.2.5'
+    compile group: 'info.cukes', name: 'cucumber-java', version: '1.2.5'
+    compile 'org.seleniumhq.selenium:selenium-server:2.44.0'
+    compile 'info.cukes:cucumber-junit:1.2.4'
+    compile 'org.testng:testng:6.1.1'
+
+}
+task firefox(type: JavaExec, group: 'selenium') {
+    classpath = configurations.testCompile + sourceSets.main.output + sourceSets.test.output
+    main = 'factory.MainCucumber'
+
+    // implicitly wait to slow down the test steps for a better inspection
+    //def USERNAME = project.hasProperty('USERNAME') ?  project.getProperty('USERNAME') : 'cbase'
+    //def PASSWORD = project.hasProperty('PASSWORD') ?  project.getProperty('PASSWORD') : 'pnam09'
+    def IMPLICITLY_WAIT = project.hasProperty('wait') ? project.getProperty('wait') : '0'
+
+    def FIREFOX_BINARY_PATH_MAC = project.hasProperty('FIREFOX_BINARY_PATH_MAC') ? project.getProperty('FIREFOX_BINARY_PATH_MAC') : new File(".").absolutePath + File.separator + 'webDrivers/geckodriver'
+    def FIREFOX_BINARY_PATH_WIN = project.hasProperty('FIREFOX_BINARY_PATH_WIN') ? project.getProperty('FIREFOX_BINARY_PATH_WIN') : new File(".").absolutePath + File.separator + 'webDrivers/geckodriver.exe'
+    def FIREFOX_BINARY_PATH_LINUX = project.hasProperty('FIREFOX_BINARY_PATH_LINUX') ? project.getProperty('FIREFOX_BINARY_PATH_LINUX') : new File(".").absolutePath + File.separator + 'webDrivers/geckodriver_linux'
+    def BROWSER = project.hasProperty('BROWSER') ? project.getProperty('BROWSER') : 'FIREFOX'
+    def URL = project.hasProperty('URL') ? project.getProperty('URL') : 'http://newtours.demoaut.com/'
+    def CUCUMBERTAGS = project.hasProperty('CUCUMBERTAGS') ? project.getProperty('CUCUMBERTAGS') : '@Register'
+
+
+    systemProperty "IMPLICITLY_WAIT", IMPLICITLY_WAIT
+    systemProperty "FIREFOX_BINARY_PATH_WIN", FIREFOX_BINARY_PATH_WIN
+    systemProperty "FIREFOX_BINARY_PATH_MAC", FIREFOX_BINARY_PATH_MAC
+    systemProperty "FIREFOX_BINARY_PATH_LINUX", FIREFOX_BINARY_PATH_LINUX
+    systemProperty "BROWSER", BROWSER
+    systemProperty "URL", URL
+    systemProperty "CUCUMBERTAGS", CUCUMBERTAGS
+    //systemProperty "USERNAME", USERNAME
+    //systemProperty "PASSWORD", PASSWORD
+
+
+}
+task chrome(type: JavaExec, group: 'selenium') {
+    classpath = configurations.testCompile + sourceSets.main.output + sourceSets.test.output
+    main = 'factory.MainCucumber'
+
+    // implicitly wait to slow down the test steps for a better inspection
+    //def USERNAME = project.hasProperty('USERNAME') ?  project.getProperty('USERNAME') : 'cbase'
+    //def PASSWORD = project.hasProperty('PASSWORD') ?  project.getProperty('PASSWORD') : 'pnam09'
+    def IMPLICITLY_WAIT = project.hasProperty('wait') ? project.getProperty('wait') : '5000'
+    def CHROME_BINARY_PATH_MAC = project.hasProperty('CHROME_BINARY_PATH_MAC') ? project.getProperty('CHROME_BINARY_PATH_MAC') : new File(".").absolutePath + File.separator + 'webDrivers/chromedriver_mac64'
+    def CHROME_BINARY_PATH_WIN = project.hasProperty('CHROME_BINARY_PATH_WIN ') ? project.getProperty('CHROME_BINARY_PATH_WIN') : new File(".").absolutePath + File.separator + 'webDrivers/chromedriver.exe'
+    def CHROME_BINARY_PATH_LINUX = project.hasProperty('CHROME_BINARY_PATH_LINUX') ? project.getProperty('CHROME_BINARY_PATH_LINUX') : new File(".").absolutePath + File.separator + 'webDrivers/geckodriver_linux'
+    def BROWSER = project.hasProperty('BROWSER') ? project.getProperty('BROWSER') : 'CHROME'
+    def URL = project.hasProperty('URL') ? project.getProperty('URL') : 'http://newtours.demoaut.com/'
+    def CUCUMBERTAGS = project.hasProperty('CUCUMBERTAGS') ? project.getProperty('CUCUMBERTAGS') : '@Test2'
+
+    systemProperty "IMPLICITLY_WAIT", IMPLICITLY_WAIT
+    systemProperty "FIREFOX_BINARY_PATH_WIN", CHROME_BINARY_PATH_WIN
+    systemProperty "FIREFOX_BINARY_PATH_MAC", CHROME_BINARY_PATH_MAC
+    systemProperty "FIREFOX_BINARY_PATH_LINUX", CHROME_BINARY_PATH_LINUX
+    systemProperty "BROWSER", BROWSER
+    systemProperty "URL", URL
+    systemProperty "CUCUMBERTAGS", CUCUMBERTAGS
+    //systemProperty "USERNAME", USERNAME
+    //systemProperty "PASSWORD", PASSWORD
+
+
+}
