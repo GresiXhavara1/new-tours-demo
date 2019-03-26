@@ -1,21 +1,21 @@
 [
   {
-    "line": 2,
+    "line": 1,
     "elements": [
       {
-        "line": 29,
-        "name": "User logs in",
+        "line": 3,
+        "name": "Validate the HomePageList and put the mouse in the center of each element of it",
         "description": "",
-        "id": "register-and-login-of-a-user-in-new-tours-page;user-logs-in;;2",
+        "id": "homepagelist;validate-the-homepagelist-and-put-the-mouse-in-the-center-of-each-element-of-it",
         "type": "scenario",
-        "keyword": "Scenario Outline",
+        "keyword": "Scenario",
         "steps": [
           {
             "result": {
-              "duration": 1715199136,
+              "duration": 2178042059,
               "status": "passed"
             },
-            "line": 20,
+            "line": 4,
             "name": "user is on home page",
             "match": {
               "location": "RegisterAndLogin.user_is_on_home_page()"
@@ -24,328 +24,55 @@
           },
           {
             "result": {
-              "duration": 664852895,
+              "duration": 279981091,
               "status": "passed"
             },
-            "line": 21,
-            "name": "user clicks sign-on button on navigation bar",
+            "line": 5,
+            "name": "user validate the homepageList",
             "match": {
-              "location": "RegisterAndLogin.userClicksSignOnButtonOnNavigationBar()"
+              "location": "HomePageList.user_validate_the_homepageList(DataTable)"
             },
+            "rows": [
+              {
+                "cells": [
+                  "Home",
+                  "Flights",
+                  "Hotels",
+                  "Car Rentals",
+                  "Cruises",
+                  "Destinations",
+                  "Vacations"
+                ],
+                "line": 6
+              }
+            ],
             "keyword": "When "
           },
           {
             "result": {
-              "duration": 213662005,
+              "duration": 38131561,
               "status": "passed"
             },
-            "line": 22,
-            "name": "user enters user name and password",
+            "line": 7,
+            "name": "user put the mouse in center of each element",
             "match": {
-              "location": "RegisterAndLogin.userEntersUsernameAndPassword(DataTable)"
-            },
-            "matchedColumns": [
-              0,
-              1
-            ],
-            "rows": [
-              {
-                "cells": [
-                  "gresi",
-                  "gresi"
-                ],
-                "line": 23
-              }
-            ],
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 43898905016,
-              "status": "passed"
-            },
-            "line": 24,
-            "name": "user clicks submit",
-            "match": {
-              "location": "RegisterAndLogin.userClicksSubmit()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 40631089,
-              "status": "passed"
-            },
-            "line": 25,
-            "name": "user check for \"Flight Details\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "Flight Details",
-                  "offset": 16
-                }
-              ],
-              "location": "RegisterAndLogin.userCheckFor(String)"
+              "location": "HomePageList.userPutTheMouseInCenterOfEachElement()"
             },
             "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 1053340457,
-              "status": "passed"
-            },
-            "line": 26,
-            "name": "user clicks Sign-Off button",
-            "match": {
-              "location": "RegisterAndLogin.userClicksSignOffButton()"
-            },
-            "keyword": "And "
           }
         ],
         "tags": [
           {
-            "line": 1,
-            "name": "@Register"
-          },
-          {
-            "line": 18,
-            "name": "@Test2"
-          }
-        ]
-      },
-      {
-        "line": 30,
-        "name": "User logs in",
-        "description": "",
-        "id": "register-and-login-of-a-user-in-new-tours-page;user-logs-in;;3",
-        "type": "scenario",
-        "keyword": "Scenario Outline",
-        "steps": [
-          {
-            "result": {
-              "duration": 647911978,
-              "status": "passed"
-            },
-            "line": 20,
-            "name": "user is on home page",
-            "match": {
-              "location": "RegisterAndLogin.user_is_on_home_page()"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 697003519,
-              "status": "passed"
-            },
-            "line": 21,
-            "name": "user clicks sign-on button on navigation bar",
-            "match": {
-              "location": "RegisterAndLogin.userClicksSignOnButtonOnNavigationBar()"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 171408452,
-              "status": "passed"
-            },
-            "line": 22,
-            "name": "user enters user name and password",
-            "match": {
-              "location": "RegisterAndLogin.userEntersUsernameAndPassword(DataTable)"
-            },
-            "matchedColumns": [
-              0,
-              1
-            ],
-            "rows": [
-              {
-                "cells": [
-                  "marjo",
-                  "marjo"
-                ],
-                "line": 23
-              }
-            ],
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 24620083899,
-              "status": "passed"
-            },
-            "line": 24,
-            "name": "user clicks submit",
-            "match": {
-              "location": "RegisterAndLogin.userClicksSubmit()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 50990394,
-              "status": "passed"
-            },
-            "line": 25,
-            "name": "user check for \"Flight Details\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "Flight Details",
-                  "offset": 16
-                }
-              ],
-              "location": "RegisterAndLogin.userCheckFor(String)"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 891305448,
-              "status": "passed"
-            },
-            "line": 26,
-            "name": "user clicks Sign-Off button",
-            "match": {
-              "location": "RegisterAndLogin.userClicksSignOffButton()"
-            },
-            "keyword": "And "
-          }
-        ],
-        "tags": [
-          {
-            "line": 1,
-            "name": "@Register"
-          },
-          {
-            "line": 18,
-            "name": "@Test2"
-          }
-        ]
-      },
-      {
-        "line": 31,
-        "name": "User logs in",
-        "description": "",
-        "id": "register-and-login-of-a-user-in-new-tours-page;user-logs-in;;4",
-        "type": "scenario",
-        "keyword": "Scenario Outline",
-        "steps": [
-          {
-            "result": {
-              "duration": 681362613,
-              "status": "passed"
-            },
-            "line": 20,
-            "name": "user is on home page",
-            "match": {
-              "location": "RegisterAndLogin.user_is_on_home_page()"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 661512437,
-              "status": "passed"
-            },
-            "line": 21,
-            "name": "user clicks sign-on button on navigation bar",
-            "match": {
-              "location": "RegisterAndLogin.userClicksSignOnButtonOnNavigationBar()"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 223542161,
-              "status": "passed"
-            },
-            "line": 22,
-            "name": "user enters user name and password",
-            "match": {
-              "location": "RegisterAndLogin.userEntersUsernameAndPassword(DataTable)"
-            },
-            "matchedColumns": [
-              0,
-              1
-            ],
-            "rows": [
-              {
-                "cells": [
-                  "kejsi",
-                  "kejsi"
-                ],
-                "line": 23
-              }
-            ],
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 56861121641,
-              "status": "passed"
-            },
-            "line": 24,
-            "name": "user clicks submit",
-            "match": {
-              "location": "RegisterAndLogin.userClicksSubmit()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 33366434,
-              "status": "passed"
-            },
-            "line": 25,
-            "name": "user check for \"Flight Details\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "Flight Details",
-                  "offset": 16
-                }
-              ],
-              "location": "RegisterAndLogin.userCheckFor(String)"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 1136555860,
-              "status": "passed"
-            },
-            "line": 26,
-            "name": "user clicks Sign-Off button",
-            "match": {
-              "location": "RegisterAndLogin.userClicksSignOffButton()"
-            },
-            "keyword": "And "
-          }
-        ],
-        "tags": [
-          {
-            "line": 1,
-            "name": "@Register"
-          },
-          {
-            "line": 18,
-            "name": "@Test2"
+            "line": 2,
+            "name": "@Test5"
           }
         ]
       }
     ],
-    "name": "Register and Login of a user in new tours page",
+    "name": "HomePageList",
     "description": "",
-    "id": "register-and-login-of-a-user-in-new-tours-page",
+    "id": "homepagelist",
     "keyword": "Feature",
-    "uri": "RegisterAndLogin.feature",
-    "tags": [
-      {
-        "line": 1,
-        "name": "@Register"
-      }
-    ]
+    "uri": "HomePageList.feature"
   }
 ]
