@@ -22,11 +22,12 @@ public class HomePageList {
 
     }
 
-    @Then("^user put the mouse in center of each element$")
-    public void userPutTheMouseInCenterOfEachElement() {
-        Actions builder = new Actions(WebDriverFactory.getInstance().getDriver());
-        Action mouseOverHome = builder.moveToElement(WebDriverFactory.getInstance().getDriver().findElement(HomePageListElement.ByHome)).build();
-        mouseOverHome.perform();
+//    @Then("^user put the mouse in center of each element$")
+//    public void userPutTheMouseInCenterOfEachElement() {
+//        Actions builder = new Actions(WebDriverFactory.getInstance().getDriver());
+//        Action mouseOverHome = builder.moveToElement(WebDriverFactory.getInstance().getDriver().findElement(HomePageListElement.ByHome)).build();
+//        mouseOverHome.perform();
 
     }
 }
+git 
