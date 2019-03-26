@@ -7,12 +7,9 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import factory.WebDriverFactory;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import webElements.RegisterAndLoginElement;
 import org.junit.Assert;
-
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class RegisterAndLogin {
@@ -95,7 +92,6 @@ public class RegisterAndLogin {
     @Then("^user check for \"([^\"]*)\"$")
     public void userCheckFor(String title) {
         String expected = RegisterAndLoginElement.FlightDetails.getText();
-        System.out.println("Text is" + expected);
         Assert.assertEquals(title,expected);
     }
     @And("^user clicks Sign-Off button$")
