@@ -74,7 +74,7 @@ task chrome(type: JavaExec, group: 'selenium') {
     def CHROME_BINARY_PATH_LINUX = project.hasProperty('CHROME_BINARY_PATH_LINUX') ? project.getProperty('CHROME_BINARY_PATH_LINUX') : new File(".").absolutePath + File.separator + 'webDrivers/geckodriver_linux'
     def BROWSER = project.hasProperty('BROWSER') ? project.getProperty('BROWSER') : 'CHROME'
     def URL = project.hasProperty('URL') ? project.getProperty('URL') : 'http://newtours.demoaut.com/'
-    def CUCUMBERTAGS = project.hasProperty('CUCUMBERTAGS') ? project.getProperty('CUCUMBERTAGS') : '@Test5'
+    def CUCUMBERTAGS = project.hasProperty('CUCUMBERTAGS') ? project.getProperty('CUCUMBERTAGS') : '@Test6'
 
     systemProperty "IMPLICITLY_WAIT", IMPLICITLY_WAIT
     systemProperty "FIREFOX_BINARY_PATH_WIN", CHROME_BINARY_PATH_WIN
