@@ -1,7 +1,6 @@
 package webElements;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import util.CustomWebElement;
 
 public class HomePageListElement {
